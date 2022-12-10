@@ -1,8 +1,10 @@
 from game_screen import screen
 from snake import Snake
+from food import Food
 import time
 
 snake = Snake()
+food = Food()
 
 screen.onkey(snake.up, "Up")
 screen.onkey(snake.left, "Left")
