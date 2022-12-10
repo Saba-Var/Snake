@@ -14,11 +14,17 @@ class Snake(Turtle):
 
     def create_snake(self):
         for starting_position in self.starting_positions:
-            segment = Turtle("square")
-            segment.penup()
-            segment.color("green")
-            segment.goto(starting_position)
-            self.segments_list.append(segment)
+            self.add_segment(starting_position)
+
+    def add_segment(self, starting_position):
+        segment = Turtle("square")
+        segment.penup()
+        segment.color("green")
+        segment.goto(starting_position)
+        self.segments_list.append(segment)
+
+    def extend(self):
+        self.add_segment(self.segments_list[-1].position())
 
     def change_heading(self, heading, opposite_heading):
         if self.snake_head.heading() != opposite_heading:

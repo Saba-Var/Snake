@@ -30,5 +30,6 @@ while snake.game_is_on:
     if snake.snake_head.distance(food) < 15:
         food.generate_location()
         score.increase_score()
+        snake.extend()
 
 screen.exitonclick()
