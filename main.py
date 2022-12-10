@@ -18,7 +18,10 @@ screen.onkey(snake.down, "s")
 
 while snake.game_is_on:
     screen.update()
-    time.sleep(0.1)
+    time.sleep(0.4)
     snake.move()
+
+    if snake.snake_head.distance(food) < 15:
+        food.generate_location()
 
 screen.exitonclick()

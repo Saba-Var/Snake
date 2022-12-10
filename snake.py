@@ -1,8 +1,9 @@
 from turtle import Turtle
 
 
-class Snake:
+class Snake(Turtle):
     def __init__(self):
+        super().__init__()
         self.directions = {"right": 0, "up": 90, "left": 180, "down": 270, }
         self.starting_positions = [(0, 0), (-20, 0), (-40, 0)]
         self.game_is_on = True
