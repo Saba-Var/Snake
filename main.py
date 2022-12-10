@@ -1,4 +1,4 @@
-from scroeboard import Scoreboard
+from scoreboard import Scoreboard
 from game_screen import screen
 from snake import Snake
 from food import Food
