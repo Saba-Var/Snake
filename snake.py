@@ -11,6 +11,7 @@ class Snake(Turtle):
         self.travel_distance = 20
         self.create_snake()
         self.snake_head = self.segments_list[0]
+        self.snake_head.color("red")
 
     def create_snake(self):
         for starting_position in self.starting_positions:
