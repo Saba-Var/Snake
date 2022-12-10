@@ -23,6 +23,10 @@ while snake.game_is_on:
     time.sleep(0.1)
     snake.move()
 
+    if snake.snake_head.xcor() > 280 or snake.snake_head.xcor() < -280 or snake.snake_head.ycor() > 280 or snake.snake_head.ycor() < -280:
+        snake.game_is_on = False
+        score.game_over()
+
     if snake.snake_head.distance(food) < 15:
         food.generate_location()
         score.increase_score()
