@@ -1,3 +1,4 @@
+from scroeboard import Scoreboard
 from game_screen import screen
 from snake import Snake
 from food import Food
@@ -5,6 +6,7 @@ import time
 
 snake = Snake()
 food = Food()
+score = Scoreboard()
 
 screen.onkey(snake.up, "Up")
 screen.onkey(snake.left, "Left")
@@ -18,10 +20,11 @@ screen.onkey(snake.down, "s")
 
 while snake.game_is_on:
     screen.update()
-    time.sleep(0.4)
+    time.sleep(0.1)
     snake.move()
 
     if snake.snake_head.distance(food) < 15:
         food.generate_location()
+        score.increase_score()
 
 screen.exitonclick()
