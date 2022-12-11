@@ -25,12 +25,12 @@ while snake.game_is_on:
 
     for segment in snake.segments_list[1:]:
         if snake.snake_head.distance(segment) < 10:
-            snake.game_is_on = False
-            score.game_over()
+            score.reset_game()
+            snake.reset()
 
-    if snake.snake_head.xcor() > 290 or snake.snake_head.xcor() < -290 or snake.snake_head.ycor() > 290 or snake.snake_head.ycor() < -290:
-        snake.game_is_on = False
-        score.game_over()
+    if snake.snake_head.xcor() > 280 or snake.snake_head.xcor() < -280 or snake.snake_head.ycor() > 280 or snake.snake_head.ycor() < -280:
+        score.reset_game()
+        snake.reset()
 
     if snake.snake_head.distance(food) < 15:
         food.generate_location()
